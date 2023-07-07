@@ -1,10 +1,15 @@
 <template>
   <div>
-    <h1>App.vue根组件</h1>
+    <h1>App 根组件</h1>
+
+    <TodoList></TodoList>
   </div>
 </template>
 
 <script>
+// 导入需要注册的组件
+import TodoList from '@/components/todo-list/TodoList.vue'
+
 export default {
   name: 'App',
   data() {
@@ -16,6 +21,10 @@ export default {
         { id: 3, task: '准备周三上午的演讲稿', done: true }
       ]
     }
+  },
+  // 注册局部组件
+  components: {
+    TodoList
   }
 }
 </script>
