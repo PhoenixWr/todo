@@ -1,8 +1,5 @@
 <template>
-  <div>
-    <h1>App 根组件</h1>
-    <hr />
-
+  <div class="app-container">
     <TodoInput @add-task="onAddTask"></TodoInput>
     <TodoList :list="tasklist"></TodoList>
     <TodoButton v-model:active="activeIndex"></TodoButton>
@@ -73,4 +70,8 @@ export default {
 }
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.app-container {
+  padding: 15px;
+}
+</style>

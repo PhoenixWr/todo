@@ -1,5 +1,5 @@
 <template>
-  <ul class="list-group mt-2">
+  <ul class="list-group overflow-auto mt-2">
     <!-- 列表项 -->
     <li class="list-group-item d-flex justify-content-between align-items-center" v-for="item in list" :key="item.id">
       <!-- 复选框 -->
@@ -32,6 +32,7 @@ export default {
 // 调整列表组宽度
 .list-group {
   width: 400px;
+  height: 150px;
 }
 
 // 删除效果
