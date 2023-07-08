@@ -2,7 +2,7 @@
   <div>
     <h1>App 根组件</h1>
 
-    <TodoList></TodoList>
+    <TodoList :list="todolist"></TodoList>
   </div>
 </template>
 
