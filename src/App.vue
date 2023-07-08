@@ -1,14 +1,17 @@
 <template>
   <div>
     <h1>App 根组件</h1>
+    <hr />
 
-    <TodoList :list="todolist"></TodoList>
+    <TodoInput></TodoInput>
+    <TodoList class="mt-2" :list="todolist"></TodoList>
   </div>
 </template>
 
 <script>
 // 导入需要注册的组件
 import TodoList from '@/components/todo-list/TodoList.vue'
+import TodoInput from '@/components/todo-input/TodoInput.vue'
 
 export default {
   name: 'App',
@@ -24,7 +27,8 @@ export default {
   },
   // 注册局部组件
   components: {
-    TodoList
+    TodoList,
+    TodoInput
   }
 }
 </script>
