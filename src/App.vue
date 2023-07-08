@@ -4,7 +4,7 @@
     <hr />
 
     <TodoInput @add-task="onAddTask"></TodoInput>
-    <TodoList class="mt-2" :list="todolist"></TodoList>
+    <TodoList :list="todolist"></TodoList>
     <TodoButton></TodoButton>
   </div>
 </template>

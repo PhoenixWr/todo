@@ -1,5 +1,5 @@
 <template>
-  <ul class="list-group">
+  <ul class="list-group mt-2">
     <!-- 列表项 -->
     <li class="list-group-item d-flex justify-content-between align-items-center" v-for="item in list" :key="item.id">
       <!-- 复选框 -->
