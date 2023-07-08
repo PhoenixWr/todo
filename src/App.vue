@@ -5,6 +5,7 @@
 
     <TodoInput @add-task="onAddTask"></TodoInput>
     <TodoList class="mt-2" :list="todolist"></TodoList>
+    <TodoButton></TodoButton>
   </div>
 </template>
 
@@ -12,13 +13,15 @@
 // 导入需要注册的组件
 import TodoList from '@/components/todo-list/TodoList.vue'
 import TodoInput from '@/components/todo-input/TodoInput.vue'
+import TodoButton from '@/components/todo-button/TodoButton.vue'
 
 export default {
   name: 'App',
   // 注册局部组件
   components: {
     TodoList,
-    TodoInput
+    TodoInput,
+    TodoButton
   },
   computed: {
     // 添加新任务的id
