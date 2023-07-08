@@ -3,7 +3,7 @@
     <h1>App 根组件</h1>
     <hr />
 
-    <TodoInput></TodoInput>
+    <TodoInput @add-task="onAddTask"></TodoInput>
     <TodoList class="mt-2" :list="todolist"></TodoList>
   </div>
 </template>
@@ -15,6 +15,11 @@ import TodoInput from '@/components/todo-input/TodoInput.vue'
 
 export default {
   name: 'App',
+  // 注册局部组件
+  components: {
+    TodoList,
+    TodoInput
+  },
   data() {
     return {
       // 任务列表数据
@@ -25,10 +30,10 @@ export default {
       ]
     }
   },
-  // 注册局部组件
-  components: {
-    TodoList,
-    TodoInput
+  methods: {
+    onAddTask(taskname) {
+      console.log(taskname)
+    }
   }
 }
 </script>
