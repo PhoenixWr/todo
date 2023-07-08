@@ -5,7 +5,7 @@
 
     <TodoInput @add-task="onAddTask"></TodoInput>
     <TodoList :list="todolist"></TodoList>
-    <TodoButton></TodoButton>
+    <TodoButton v-model:active="activeIndex"></TodoButton>
   </div>
 </template>
 
@@ -37,7 +37,9 @@ export default {
         { id: 1, task: '周一早晨9点开会', done: false },
         { id: 2, task: '周一晚上8点聚餐', done: false },
         { id: 3, task: '准备周三上午的演讲稿', done: true }
-      ]
+      ],
+      // TodoButton默认激活项索引
+      activeIndex: 0
     }
   },
   methods: {
