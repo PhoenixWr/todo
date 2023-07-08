@@ -18,7 +18,7 @@
 export default {
   name: 'TodoInput',
   // 声明自定义事件
-  emits: ['addTask'],
+  emits: ['add-task'],
   data() {
     return {
       // 新任务名称
@@ -31,7 +31,7 @@ export default {
       // 非空验证
       if (!this.taskname) return alert('任务名称不允许为空')
       // 触发自定义事件，向外部传递任务名称数据
-      this.$emit('addTask', this.taskname)
+      this.$emit('add-task', this.taskname)
       // 清空文本框
       this.taskname = ''
     }

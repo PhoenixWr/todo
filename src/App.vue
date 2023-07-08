@@ -20,6 +20,13 @@ export default {
     TodoList,
     TodoInput
   },
+  computed: {
+    // 添加新任务的id
+    nextId() {
+      const length = this.todolist.length
+      return length ? this.todolist[length - 1].id + 1 : 1
+    }
+  },
   data() {
     return {
       // 任务列表数据
@@ -31,8 +38,14 @@ export default {
     }
   },
   methods: {
+    // TodoInput组件自定义事件add-task处理函数
     onAddTask(taskname) {
-      console.log(taskname)
+      // 向任务列表中添加新任务数据
+      this.todolist.push({
+        id: this.nextId,
+        task: taskname,
+        done: false
+      })
     }
   }
 }
