@@ -23,6 +23,16 @@ export default {
     TodoInput,
     TodoButton
   },
+  watch: {
+    // 深度侦听todolist数组中数据变化，将更新后的数据同步存储到本地存储
+    todolist: {
+      handler(newValue) {
+        localStorage.setItem('todolist', JSON.stringify(newValue))
+      },
+      // 复杂数据类型需要开启深度侦听，侦听数组或对象内部数据变化
+      deep: true
+    }
+  },
   computed: {
     // 添加新任务的id
     nextId() {
@@ -44,11 +54,7 @@ export default {
   data() {
     return {
       // 任务列表数据
-      todolist: [
-        { id: 1, task: '周一早晨9点开会', done: false },
-        { id: 2, task: '周一晚上8点聚餐', done: false },
-        { id: 3, task: '准备周三上午的演讲稿', done: true }
-      ],
+      todolist: JSON.parse(localStorage.getItem('todolist')) || [],
       // TodoButton默认激活项索引
       activeIndex: 0
     }
