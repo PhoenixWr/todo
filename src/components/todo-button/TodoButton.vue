@@ -18,7 +18,11 @@ export default {
     active: {
       type: Number,
       required: true,
-      default: 0
+      default: 0,
+      // 自定义类型校验函数，校验active属性值是否为 0, 1, 2 中的1个
+      validator(value) {
+        return [0, 1, 2].includes(value)
+      }
     }
   },
   methods: {

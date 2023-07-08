@@ -4,7 +4,7 @@
     <hr />
 
     <TodoInput @add-task="onAddTask"></TodoInput>
-    <TodoList :list="todolist"></TodoList>
+    <TodoList :list="tasklist"></TodoList>
     <TodoButton v-model:active="activeIndex"></TodoButton>
   </div>
 </template>
@@ -28,6 +28,17 @@ export default {
     nextId() {
       const length = this.todolist.length
       return length ? this.todolist[length - 1].id + 1 : 1
+    },
+    // 根据激活按钮索引值动态计算要展示的任务列表数据
+    tasklist() {
+      switch (this.activeIndex) {
+        case 0: // 全部
+          return this.todolist
+        case 1: // 已完成
+          return this.todolist.filter(item => item.done)
+        case 2: // 未完成
+          return this.todolist.filter(item => !item.done)
+      }
     }
   },
   data() {
